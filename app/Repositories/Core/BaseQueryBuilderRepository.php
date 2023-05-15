@@ -85,4 +85,7 @@ class BaseQueryBuilderRepository implements RepositoryInterface
 
         return  $this;
     }
+
+
+
 }

@@ -7,6 +7,9 @@ use Illuminate\Support\Facades\Route;
 
 $this->group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
 
+
+    $this->get('reports/months', 'ReportsController@months')->name('reports.months');
+
     $this->resource('users', 'UserController');
     $this->any('users/search', 'UserController@search')->name('users.search');
 

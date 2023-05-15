@@ -9,6 +9,7 @@ use App\Repositories\Contracts\
     CategoryRepositoryInterface,
     ChartRepositoryInterface,
     DashboardRepositoryInterface,
+    ReportsRepositoryInterface,
     UserRepositoryInterface
 };
 use App\Repositories\Core\Eloquent\
@@ -22,6 +23,7 @@ use App\Repositories\Core\Eloquent\
 use App\Repositories\Core\QueryBuilder\
 {
     QueryBuilderCategoryRepository,
+    QueryBuilderReportsRepository
 
 };
 class RepositoryServiceProvider extends ServiceProvider
@@ -54,6 +56,10 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(
             UserRepositoryInterface::class,
             EloquentUserRepository::class
+        );
+        $this->app->bind(
+            ReportsRepositoryInterface::class,
+            QueryBuilderReportsRepository::class
         );
     }
 

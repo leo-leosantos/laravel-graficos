@@ -17,7 +17,7 @@ return [
 
     'title_prefix' => 'Repository ',
 
-    'title_postfix' => '| EspecializiTI',
+    'title_postfix' => '| EspecializaTI',
 
     /*
     |--------------------------------------------------------------------------
@@ -152,6 +152,19 @@ return [
             'url'         => 'admin/users',
             'icon'        => 'fas fa-users-cog',
             'label_color' => 'success',
+        ],
+        [
+            'text'        => 'Relátorios ',
+            'icon'        => 'fas fa-chart-area',
+            'submenu' => [
+                [
+                    'text'        => 'Meses ',
+                    'url'         => 'admin/reports/months',
+                    'icon'        => 'fas fa-chart-line',
+                ],
+
+
+            ],
         ],
 
     ],

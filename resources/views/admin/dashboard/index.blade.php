@@ -64,7 +64,7 @@
                         <i class="ion ion-person-add"></i>
 
                     </div>
-                    <a href="{{ route('products.index') }}" class="small-box-footer">
+                    <a href="{{ route('users.index') }}" class="small-box-footer">
                         Mais Informações <i class="fa fa-arrow-circle-right"></i>
                     </a>
                 </div>
