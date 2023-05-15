@@ -162,6 +162,11 @@ return [
                     'url'         => 'admin/reports/months',
                     'icon'        => 'fas fa-chart-line',
                 ],
+                [
+                    'text'        => 'Anual',
+                    'url'         => 'admin/reports/year',
+                    'icon'        => 'fas fa-chart-line',
+                ],
 
 
             ],

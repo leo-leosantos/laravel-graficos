@@ -24,14 +24,34 @@ class ReportsController extends Controller
 
         $chart->dataset('2018', 'bar', $this->repository->byMonths(2018));
         $chart->dataset('2019', 'bar', $this->repository->byMonths(2019))->options([
-            'backgroundColor'=> '#333',
-       ]);;
+            'backgroundColor' => '#333',
+        ]);;
 
-         $chart->dataset('2020', 'bar',$this->repository->byMonths(2020))->options([
-             'backgroundColor'=> '#999',
+        $chart->dataset('2020', 'bar', $this->repository->byMonths(2020))->options([
+            'backgroundColor' => '#999',
         ]);
 
 
         return view('admin.charts.chart', compact('chart'));
     }
+
+
+    public function months2()
+    {
+        $chart = $this->repository->getReports(2021, 2022);
+        return view('admin.charts.chart', compact('chart'));
+    }
+
+    public function year(ReportsChart $chart)
+    {
+        $response = $this->repository->getDataYears();
+
+        $chart->labels($response['labels'])->dataset('Relatorios de Vendas','bar',$response['values'])->color('black')
+                                            ->backgroundColor($response['backgrounds']);
+
+        return view('admin.charts.chart', compact('chart'));
+    }
+
+
+
 }

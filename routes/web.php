@@ -8,7 +8,9 @@ use Illuminate\Support\Facades\Route;
 $this->group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
 
 
-    $this->get('reports/months', 'ReportsController@months')->name('reports.months');
+   // $this->get('reports/months', 'ReportsController@months')->name('reports.months');
+     $this->get('reports/months', 'ReportsController@months2')->name('reports.months');
+     $this->get('reports/year', 'ReportsController@year')->name('reports.years');
 
     $this->resource('users', 'UserController');
     $this->any('users/search', 'UserController@search')->name('users.search');
